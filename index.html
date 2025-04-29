@@ -28,6 +28,7 @@
             margin: 10px;
             font-size: 16px;
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
 
         .btn:hover {
@@ -35,13 +36,15 @@
             cursor: pointer;
         }
 
+        .container {
+            padding: 20px;
+        }
+
         footer {
             background-color: #333;
             color: white;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -49,13 +52,26 @@
 
 <header>
     <h1>Bienvenue sur mon Portfolio C#</h1>
+    <p>Découvre tous mes projets et ma formation C#</p>
 </header>
 
-<div>
-    <h2>Mes projets en C# :</h2>
-    <a href="https://github.com/Scouixe/chronometre-csharp" class="btn">Voir Chronomètre C#</a>
-    <a href="https://github.com/Scouixe/journal-secret-csharp" class="btn">Voir Journal Secret C#</a>
-    <a href="https://github.com/Scouixe/bloc-notes-csharp" class="btn">Voir Bloc-notes C#</a>
+<div class="container">
+    <h2>📦 Mes projets en C# :</h2>
+
+    <!-- Liens vers les dépôts GitHub -->
+    <a href="https://github.com/Scouixe/chronometre-csharp" class="btn" target="_blank">Voir Chronomètre</a>
+    <a href="https://github.com/Scouixe/journal-secret-csharp" class="btn" target="_blank">Voir Journal Secret</a>
+    <a href="https://github.com/Scouixe/bloc-notes-csharp" class="btn" target="_blank">Voir Bloc-notes</a>
+
+    <h2>⬇️ Téléchargements :</h2>
+
+    <!-- Liens de téléchargement des fichiers hébergés sur le même dépôt -->
+    <a href="chronometre.zip" class="btn" download>Télécharger Chronomètre</a>
+    <a href="journal-secret.zip" class="btn" download>Télécharger Journal Secret</a>
+    <a href="blocnote.zip" class="btn" download>Télécharger Bloc-notes</a>
+
+    <h2>📚 Formation C# :</h2>
+    <a href="formation.html" class="btn">Accéder à ma formation</a>
 </div>
 
 <footer>
