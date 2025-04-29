@@ -1,17 +1,287 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formation C# - Par Scouixe</title>
-</head>
-<body>
-    <h1>Ma formation C#</h1>
-    <p>Bienvenue dans ma formation C# !</p>
-    <ul>
-        <li><strong>Leçon 1 :</strong> Les bases du langage C#</li>
-        <li><strong>Leçon 2 :</strong> Variables et types</li>
-        <li><strong>Leçon 3 :</strong> Conditions et boucles</li>
-    </ul>
-    <a href="index.html">⬅️ Retour à l'accueil</a>
-</body>
-</html>
+Formation C# - Introduction et Concepts de Base
+1. Introduction au C#
+C# est un langage de programmation moderne, orienté objet, développé par Microsoft. Il est utilisé principalement pour les applications Windows, les applications web, ainsi que pour les jeux vidéo grâce à Unity.
+
+Objectifs de la formation :
+
+Comprendre les bases du C#.
+
+Apprendre à écrire des programmes simples.
+
+Aborder la programmation orientée objet.
+
+2. Installation de Visual Studio
+Télécharge et installe Visual Studio Community (version gratuite).
+
+Crée un projet Console App C#.
+
+3. Les bases de C# - Syntaxe et variables
+Voici un premier programme simple :
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Affichage à l'écran
+            Console.WriteLine("Bonjour, bienvenue dans le monde de C#!");
+
+            // Déclaration et initialisation de variables
+            int age = 23;
+            string nom = "Jean";
+            double salaire = 2500.50;
+
+            // Affichage des variables
+            Console.WriteLine("Nom: " + nom);
+            Console.WriteLine("Âge: " + age);
+            Console.WriteLine("Salaire: " + salaire);
+
+            // Attente avant de fermer
+            Console.ReadLine();
+        }
+    }
+}
+Explications :
+
+using System; : Importation de la bibliothèque de base.
+
+Console.WriteLine("...") : Affiche du texte à l'écran.
+
+int, string, double : Déclaration de types de variables.
+
+4. Structures de contrôle : if, else, switch
+Exemple avec if et else :
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = 20;
+
+            if (age >= 18)
+            {
+                Console.WriteLine("Vous êtes majeur.");
+            }
+            else
+            {
+                Console.WriteLine("Vous êtes mineur.");
+            }
+
+            // Switch pour vérifier une note
+            char note = 'A';
+
+            switch (note)
+            {
+                case 'A':
+                    Console.WriteLine("Excellent!");
+                    break;
+                case 'B':
+                    Console.WriteLine("Bien");
+                    break;
+                default:
+                    Console.WriteLine("Note non reconnue.");
+                    break;
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+5. Les boucles : for, while, do-while
+Exemple avec une boucle for :
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Affichage des 10 premiers nombres
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(i);
+            }
+
+            // Utilisation d'une boucle while
+            int compteur = 1;
+            while (compteur <= 5)
+            {
+                Console.WriteLine("Compteur: " + compteur);
+                compteur++;
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+6. Les fonctions en C#
+Les fonctions permettent de réutiliser du code et de le rendre plus modulaire :
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int resultat = Addition(5, 7);
+            Console.WriteLine("La somme de 5 et 7 est : " + resultat);
+
+            Console.ReadLine();
+        }
+
+        // Fonction qui additionne deux nombres
+        static int Addition(int a, int b)
+        {
+            return a + b;
+        }
+    }
+}
+7. Les tableaux
+Les tableaux sont utilisés pour stocker plusieurs valeurs du même type.
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Déclaration d'un tableau de nombres
+            int[] tab = { 1, 2, 3, 4, 5 };
+
+            // Affichage des valeurs du tableau
+            for (int i = 0; i < tab.Length; i++)
+            {
+                Console.WriteLine("Élément " + i + ": " + tab[i]);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+8. La Programmation Orientée Objet (POO)
+La POO est un concept central du C#. Nous allons créer une classe et un objet.
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Personne
+    {
+        // Attributs de la classe Personne
+        public string Nom;
+        public int Age;
+
+        // Constructeur de la classe
+        public Personne(string nom, int age)
+        {
+            Nom = nom;
+            Age = age;
+        }
+
+        // Méthode de la classe
+        public void SePresenter()
+        {
+            Console.WriteLine("Bonjour, je m'appelle " + Nom + " et j'ai " + Age + " ans.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Création d'un objet Personne
+            Personne p = new Personne("Alice", 30);
+
+            // Appel de la méthode
+            p.SePresenter();
+
+            Console.ReadLine();
+        }
+    }
+}
+Explications :
+
+La classe Personne contient des attributs et une méthode.
+
+Le constructeur initialise les attributs de l'objet.
+
+La méthode SePresenter affiche un message à l'écran.
+
+9. Les exceptions
+Les exceptions permettent de gérer les erreurs dans un programme.
+
+csharp
+Copier le code
+using System;
+
+namespace FormationCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int x = int.Parse("not a number"); // Cela va causer une exception
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Erreur : " + e.Message);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+10. Conclusion
+Avec cette formation de base en C#, tu as vu les principaux éléments pour débuter :
+
+La syntaxe de base.
+
+Les structures de contrôle.
+
+Les fonctions et les tableaux.
+
+La programmation orientée objet et la gestion des erreurs.
+
+Pour aller plus loin, tu peux aborder des concepts plus avancés comme les collections, les événements, et l'interaction avec des bases de données.
+
+Récapitulatif des concepts abordés :
+Types de données et variables.
+
+Structures de contrôle (if, switch).
+
+Boucles (for, while).
+
+Fonctions et méthodes.
+
+Tableaux.
+
+Programmation orientée objet (POO).
+
+Gestion des exceptions.
